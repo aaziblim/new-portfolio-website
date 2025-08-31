@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 
 import MemojiImage from "@assets/images/memoji-computer.png";
@@ -9,7 +11,7 @@ import ArrowDown from "@assets/icons/arrow-down.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 relative z-0 overflow-x-clip">
+    <div id="home" className="py-32 md:py-48 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
@@ -75,15 +77,36 @@ export const HeroSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 ">
-            <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl">
-              <span className="font-semibold"> 👀Explore my work below</span>
-              <ArrowDown className="size-4" />
+          <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+            <button className="group inline-flex items-center gap-2 bg-white text-gray-900 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl hover:border-emerald-400/20 hover:bg-emerald-400/5 transition-all">
+              <span className="font-semibold group-hover:text-emerald-400 transition-colors">
+                👀 Explore my work below
+              </span>
+              <ArrowDown className="size-4 group-hover:text-emerald-400 transition-colors" />
             </button>
-            <button className="inline-flex items-center gap-2 bg-white text-gray-900 border border-white px-6 h-12 lg:px-6 lg:h-14 rounded-xl">
-              <span>👋</span>
-              <span className="font-semibold">Let's connect</span>
-            </button>
+            
+            <a
+              href="/resume"
+              className="group relative inline-flex items-center gap-2 px-6 h-12 lg:px-6 lg:h-14 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400/20 hover:bg-emerald-400/5 transition-all"
+            >
+              <span className="font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                <span className="mr-2">📄</span>
+                Check out resume
+              </span>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 20 20" 
+                fill="currentColor" 
+                className="w-4 h-4 text-white/70 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+              >
+                <path 
+                  fillRule="evenodd" 
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" 
+                  clipRule="evenodd" 
+                />
+              </svg>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-400/0 via-emerald-400/5 to-emerald-400/20 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity"></div>
+            </a>
           </div>
         </div>
       </div>

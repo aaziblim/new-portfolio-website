@@ -7,13 +7,13 @@ import { AboutSection } from "@/sections/About";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Header />
       <HeroSection />
       <ProjectsSection />
       <TapeSection />
       <TestimonialsSection />
       <AboutSection />
-    </div>
+    </main>
   );
 }
