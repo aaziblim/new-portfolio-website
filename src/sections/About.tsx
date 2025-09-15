@@ -129,7 +129,7 @@ export const AboutSection = () => {
       <Image src={MapImage} alt="Map" className="" />
       <Image src={SmileMemoji} alt="Smile Memoji" className="" />
     </Card>
-  </div>;
+  </div>
   </div>
   </div>
 };
