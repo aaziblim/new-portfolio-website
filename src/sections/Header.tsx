@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Header = () => {
   return (
     <div className="flex justify-center items-center fixed top-3 w-full z-10">
@@ -5,13 +7,13 @@ export const Header = () => {
         <a href="#home" className="nav-item">
           Home
         </a>
-        <a href="#about" className="nav-item">
+        <Link href="#about" className="nav-item">
           About
-        </a>
-        <a href="#projects" className="nav-item">
+        </Link>
+        <Link href="#projects" className="nav-item">
           Projects
-        </a>
-        <a
+        </Link>
+        <Link
           href="./contact"
           className="nav-item bg-white text-gray-900 hover:bg-white/70 hover:text-gray-900 transition duration-300 inline-flex items-center gap-1 group"
         >
@@ -28,7 +30,7 @@ export const Header = () => {
               clipRule="evenodd"
             />
           </svg>
-        </a>
+        </Link>
       </nav>
     </div>
   );

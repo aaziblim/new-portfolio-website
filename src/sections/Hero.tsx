@@ -1,18 +1,18 @@
-'use client'
 
 import Image from "next/image";
-
 import MemojiImage from "@assets/images/memoji-computer.png";
 import GrainImage from "@assets/images/grain.jpg";
 import StarIcon from "@assets/icons/star.svg";
 import SparkleIcon from "@assets/icons/sparkle.svg";
-
 import ArrowDown from "@assets/icons/arrow-down.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
+import Link from "next/link";
+
+
 export const HeroSection = () => {
   return (
     <div id="home" className="py-32 md:py-48 relative z-0 overflow-x-clip">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{ backgroundImage: `url(${GrainImage})` }}
@@ -52,7 +52,7 @@ export const HeroSection = () => {
         </HeroOrbit>
       </div>
 
-      <div className="container">
+      <div className="container relative z-10">
         <div className="flex flex-col items-center">
           <Image
             src={MemojiImage}
@@ -61,7 +61,11 @@ export const HeroSection = () => {
           />
 
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-            <div className="bg-green-500 size-2.5 rounded-full"></div>
+            <div className="relative flex items-center justify-center">
+              <div className="size-2.5 rounded-full bg-green-500"></div>
+              <div className="absolute size-2.5 bg-green-500 rounded-full animate-ping-large"></div>
+            </div>
+            
             <div className="text-sm font-medium">
               Available now for new projects
             </div>
@@ -78,18 +82,19 @@ export const HeroSection = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-            <button className="group inline-flex items-center gap-2 bg-white text-gray-900 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl hover:border-emerald-400/20 hover:bg-emerald-400/5 transition-all">
-              <span className="font-semibold group-hover:text-emerald-400 transition-colors">
-                👀 Explore my work below
-              </span>
-              <ArrowDown className="size-4 group-hover:text-emerald-400 transition-colors" />
-            </button>
-            
-            <a
+            <Link
+              href="#projects"
+              className="group inline-flex items-center gap-2 bg-white text-gray-900 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl hover:bg-white/90 hover:text-gray-900 transition duration-300 font-semibold"
+            >
+              <span className="mr-2">👀 Explore my work below</span>
+              <ArrowDown className="size-4 group-hover:translate-y-0.5 transition-all" />
+            </Link>
+
+            <Link
               href="/resume"
               className="group relative inline-flex items-center gap-2 px-6 h-12 lg:px-6 lg:h-14 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400/20 hover:bg-emerald-400/5 transition-all"
             >
-              <span className="font-semibold text-white group-hover:text-emerald-400 transition-colors">
+              <span className="font-semibold text-white">
                 <span className="mr-2">📄</span>
                 Check out resume
               </span>
@@ -106,7 +111,7 @@ export const HeroSection = () => {
                 />
               </svg>
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-400/0 via-emerald-400/5 to-emerald-400/20 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity"></div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

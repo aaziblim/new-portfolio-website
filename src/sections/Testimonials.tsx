@@ -1,13 +1,11 @@
-import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
-import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
-import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
-import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
-import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import memojiAvatar1 from "@assets/images/memoji-avatar-1.png";
+import memojiAvatar2 from "@assets/images/memoji-avatar-2.png";
+import memojiAvatar3 from "@assets/images/memoji-avatar-3.png";
+import memojiAvatar4 from "@assets/images/memoji-avatar-4.png";
+import memojiAvatar5 from "@assets/images/memoji-avatar-5.png";
 import { HeaderSection } from "@/components/HeaderSection";
-import { div } from "framer-motion/client";
 import Image from "next/image";
 import GrainImage from "@assets/images/grain.jpg";
-import { url } from "inspector";
 import { Card } from "@/components/Card";
 
 const testimonials = [
@@ -56,7 +54,7 @@ export const TestimonialsSection = () => {
         <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-8 flex-none">
 {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="max-w-xs md:p-8 md:max-w-md">
+            <Card key={testimonial.name} className="max-w-xs p-6 md:p-8 md:max-w-md">
               <div className="flex items-center gap-4 ">
                 <div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
                   <Image

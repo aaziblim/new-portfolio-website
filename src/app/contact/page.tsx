@@ -1,182 +1,334 @@
 "use client";
 
-import { FormEvent } from 'react';
-import GrainImage from '@/assets/images/grain.jpg';
+import { FormEvent, useState } from "react";
+import GrainImage from "@/assets/images/grain.jpg";
+import Link from "next/link";
 
 const ContactPage = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(e.currentTarget);
-    
+
     try {
-      const response = await fetch('https://formspree.io/f/mnnpopjj', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/mnnpopjj", {
+        method: "POST",
         body: formData,
         headers: {
-          'Accept': 'application/json'
-        }
+          Accept: "application/json",
+        },
       });
-      
+
       if (response.ok) {
-        // Handle success
-        alert('Message sent successfully!');
+        setSubmitted(true);
         e.currentTarget.reset();
       }
     } catch (error) {
-      // Handle error
-      console.error('Error:', error);
+      console.error("Error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="pt-8 pb-16 md:pt-12 md:pb-24 relative z-0">
-      <div className="container">
-        <form
-          onSubmit={handleSubmit}
-          className="w-full max-w-2xl mx-auto p-10 rounded-3xl shadow-2xl border border-gray-800 space-y-8 relative"
-        >
-          {/* Add grain background to form */}
-          <div 
-            className="absolute inset-0 -z-10 opacity-5 rounded-3xl"
-            style={{ backgroundImage: `url(${GrainImage.src})` }}
-          ></div>
+    <div className="py-16 md:py-24 relative z-0 min-h-screen">
+      {/* Subtle background */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{ backgroundImage: `url(${GrainImage.src})` }}
+        ></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/5 rounded-full blur-3xl"></div>
+      </div>
 
-          <h2 className="text-4xl font-extrabold text-center text-white mb-6">
-            📬 Let's Work Together
-          </h2>
+      <div className="container max-w-4xl relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <p className="text-emerald-400 font-medium tracking-wide uppercase text-sm mb-3">
+            Contact
+          </p>
+          <h1 className="font-serif text-3xl md:text-5xl tracking-wide">
+            Let&apos;s Work Together
+          </h1>
+          <p className="mt-4 text-white/60 max-w-lg mx-auto">
+            Have a project in mind or just want to chat? Fill out the form below
+            and I&apos;ll get back to you within 24 hours.
+          </p>
+        </div>
 
-          {/* Update input fields to use emerald accent color */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                Full Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="Enter your full name"
-                className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] text-white border border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Enter your email address"
-                className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] text-white border border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-semibold text-gray-300 mb-2">
-              Subject
-            </label>
-            <input
-              type="text"
-              name="subject"
-              placeholder="Let's build something amazing"
-              className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] text-white border border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-semibold text-gray-300 mb-2">
-              Message
-            </label>
-            <textarea
-              name="message"
-              rows={5}
-              required
-              placeholder="Tell me more about what you're looking for..."
-              className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] text-white border border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all resize-none"
-            />
-          </div>
-
-          {/* Modern select dropdown */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                Budget Range
-              </label>
-              <div className="relative">
-                <select
-                  name="budget"
-                  className="appearance-none w-full px-4 py-3 rounded-xl bg-[#1a1a1a] text-white border border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all pr-10"
-                  defaultValue=""
+        {/* Success State */}
+        {submitted ? (
+          <div className="max-w-lg mx-auto text-center">
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-10">
+              <div className="size-16 mx-auto mb-6 rounded-full bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center">
+                <svg
+                  className="size-8 text-emerald-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <option value="" disabled>Select budget</option>
-                  <option value="under-500">$0 - $500</option>
-                  <option value="500-2000">$500 - $2000</option>
-                  <option value="2000-plus">$2000+</option>
-                  <option value="Not sure">Undecided</option>
-                </select>
-                {/* Custom dropdown arrow */}
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                  </svg>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h2 className="font-serif text-2xl mb-3">Message Sent</h2>
+              <p className="text-white/60 mb-8">
+                Thank you for reaching out. I&apos;ll review your message and
+                respond as soon as possible.
+              </p>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+              >
+                <svg
+                  className="size-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg>
+                Back to Home
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* Left side - Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                  Email
+                </h3>
+                <a
+                  href="mailto:azizmeltzer@gmail.com"
+                  className="text-white hover:text-emerald-400 transition-colors"
+                >
+                  azizmeltzer@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                  Location
+                </h3>
+                <p className="text-white">Kumasi, Ghana</p>
+                <p className="text-white/50 text-sm mt-1">GMT+0</p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                  Socials
+                </h3>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="https://github.com/aaziblim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-emerald-400 transition-colors"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="http://www.linkedin.com/in/azizjibril"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-emerald-400 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Update checkbox styles */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                Type of Project
-              </label>
-              <div className="flex flex-wrap gap-3">
-                {['Website', 'Web App', 'API', 'Consultation'].map((type) => (
-                  <label key={type} className="flex items-center space-x-2 group">
+            {/* Right side - Form */}
+            <div className="md:col-span-2">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-white/70 mb-2">
+                      Name <span className="text-emerald-400">*</span>
+                    </label>
                     <input
-                      type="checkbox"
-                      name="type"
-                      value={type.toLowerCase()}
-                      className="w-4 h-4 rounded border-gray-700 text-emerald-400 focus:ring-emerald-400/50 focus:ring-offset-0 bg-[#1a1a1a] transition-all"
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
                     />
-                    <span className="text-gray-300 group-hover:text-emerald-400/80 transition-colors">{type}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-white/70 mb-2">
+                      Email <span className="text-emerald-400">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="you@example.com"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
+                    />
+                  </div>
+                </div>
 
-          {/* Update submit button */}
-          <div className="text-center space-y-4">
-            <button
-              type="submit"
-              className="mt-6 px-8 py-4 bg-emerald-400 text-black font-bold rounded-xl shadow-lg hover:shadow-emerald-400/50 hover:scale-105 transition duration-300 ring-2 ring-emerald-400/30"
-            >
-              ✉ Send Message
-            </button>
-            
-            <div>
-              <a
-                href="/"
-                className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors"
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-4 w-4" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
-                >
-                  <path 
-                    fillRule="evenodd" 
-                    d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" 
-                    clipRule="evenodd" 
+                <div>
+                  <label className="block text-sm font-medium text-white/70 mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="What's this about?"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
                   />
-                </svg>
-                Back to Main Page
-              </a>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-white/70 mb-2">
+                      Budget
+                    </label>
+                    <div className="relative">
+                      <select
+                        name="budget"
+                        className="appearance-none w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors pr-10"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Select range
+                        </option>
+                        <option value="under-1000">Under $1,000</option>
+                        <option value="1000-5000">$1,000 - $5,000</option>
+                        <option value="5000-10000">$5,000 - $10,000</option>
+                        <option value="10000-plus">$10,000+</option>
+                        <option value="not-sure">Not sure yet</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white/40">
+                        <svg
+                          className="size-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white/70 mb-2">
+                      Project Type
+                    </label>
+                    <div className="relative">
+                      <select
+                        name="type"
+                        className="appearance-none w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors pr-10"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Select type
+                        </option>
+                        <option value="website">Website</option>
+                        <option value="web-app">Web Application</option>
+                        <option value="mobile-app">Mobile App</option>
+                        <option value="consultation">Consultation</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white/40">
+                        <svg
+                          className="size-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-white/70 mb-2">
+                    Message <span className="text-emerald-400">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={5}
+                    required
+                    placeholder="Tell me about your project..."
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors resize-none placeholder:text-white/30"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  <Link
+                    href="/"
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    ← Back to home
+                  </Link>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg
+                          className="animate-spin size-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-        </form>
+        )}
       </div>
     </div>
   );
