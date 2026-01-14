@@ -1,5 +1,9 @@
 import Link from "next/link";
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
+import GithubIcon from "@assets/icons/github.svg";
+import LinkedinIcon from "@assets/icons/linkedin.svg";
+import TwitterIcon from "@assets/icons/twitter.svg";
+import RedditIcon from "@assets/icons/reddit.svg";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -9,27 +13,24 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { label: "GitHub", href: "https://github.com/aaziblim", icon: "🐙" },
-  { label: "LinkedIn", href: "www.linkedin.com/in/azizjibril", icon: "💼" },
-  { label: "Twitter/X", href: "https://x.com/a_azizJibril", icon: "🐦" },
-  { label: "Reddit", href: "https://www.reddit.com/user/azizjibril/", icon: "🤖" },
+  { label: "GitHub", href: "https://github.com/aaziblim", icon: GithubIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/azizjibril", icon: LinkedinIcon },
+  { label: "Twitter/X", href: "https://x.com/a_azizJibril", icon: TwitterIcon },
+  { label: "Reddit", href: "https://www.reddit.com/user/azizjibril/", icon: RedditIcon },
 ];
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-x-clip">
-      {/* Top gradient border */}
-      <div className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
-
+    <footer className="relative">
       <div className="container">
         <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8">
           {/* Left side - Copyright */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="text-white/40">
               &copy; {currentYear} • Crafted with{" "}
-              <span className="text-red-400">❤️</span> &{" "}
+              <span className="text-red-400">Grind</span> &{" "}
               <span className="text-amber-400">☕</span>
             </div>
             <div className="text-white/20 text-xs font-mono hidden md:block">
@@ -61,9 +62,7 @@ export const Footer = () => {
                 className="group size-10 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-emerald-400/10 hover:border-emerald-400/30 transition-all"
                 title={social.label}
               >
-                <span className="group-hover:scale-110 transition-transform">
-                  {social.icon}
-                </span>
+                <social.icon className="size-5 text-white/70 group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
             ))}
           </div>

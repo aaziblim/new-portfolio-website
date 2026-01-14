@@ -37,7 +37,7 @@ const config: Config = {
             opacity: '1',
           },
           '75%, 100%': {
-            transform: 'scale(3)',
+            transform: 'scale(4)',
             opacity: '0',
           }
         }

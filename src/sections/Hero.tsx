@@ -92,17 +92,15 @@ export const HeroSection = () => {
 
             <Link
               href="/resume"
-              className="group relative inline-flex items-center gap-2 px-6 h-12 lg:px-6 lg:h-14 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400/20 hover:bg-emerald-400/5 transition-all"
+              className="inline-flex items-center gap-2 px-6 h-12 lg:px-6 hover:bg-white/5 lg:h-14 rounded-xl border border-white/15 text-white/70 font-semibold"
             >
-              <span className="font-semibold text-white">
-                <span className="mr-2">📄</span>
-                Check out resume
-              </span>
+              <span className="mr-2">📄</span>
+              Check out resume
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 20 20" 
                 fill="currentColor" 
-                className="w-4 h-4 text-white/70 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                className="w-4 h-4"
               >
                 <path 
                   fillRule="evenodd" 
@@ -110,7 +108,6 @@ export const HeroSection = () => {
                   clipRule="evenodd" 
                 />
               </svg>
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-400/0 via-emerald-400/5 to-emerald-400/20 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity"></div>
             </Link>
           </div>
         </div>
