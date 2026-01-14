@@ -27,7 +27,9 @@ const config: Config = {
         serif: "var(--font-serif)",
       },
       animation: {
-        'ping-large': "ping-large 1s ease-in-out infinite"
+        'ping-large': "ping-large 1s ease-in-out infinite",
+        'move-left': "move-left 30s linear infinite",
+        'move-right': "move-right 30s linear infinite",
       },
 
       keyframes: {
@@ -39,8 +41,24 @@ const config: Config = {
           '75%, 100%': {
             transform: 'scale(4)',
             opacity: '0',
-          }
-        }
+          },
+        },
+        'move-left': {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(-50%)',
+          },
+        },
+        'move-right': {
+          '0%': {
+            transform: 'translateX(-50%)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+          },
+        },
       }
     },
   },

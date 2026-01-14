@@ -87,10 +87,22 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <a href={project.link}>
+<div className="flex flex-col md:flex-row md:gap-4">
+  <div>
+  
                     <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
-                      <span className="">View live project</span>
+                      <span className="">Visit Project</span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>
+</div>
+
+                    <div>
+                       <button className="bg-white/90 from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                      <span className="">See Demo</span>
+                      <ArrowUpRightIcon className="size-4" />
+                    </button>
+                    </div>
+</div>
                   </a>
                 </div>
 

@@ -24,7 +24,7 @@ export const HeroSection = () => {
         <div className="hero_ring size-[1220px] lg:size-[85vw]"></div>
         <div className="hero_ring size-[1420px] lg:size-[100vw]"></div>
 
-        <HeroOrbit size={800} rotate={-72}>
+        {/* <HeroOrbit size={800} rotate={-72}>
           <StarIcon className="size-28 text-emerald-300 inline-flex" />
         </HeroOrbit>
         <HeroOrbit size={550} rotate={20}>
@@ -50,6 +50,7 @@ export const HeroSection = () => {
         <HeroOrbit size={720} rotate={85}>
           <div className="size-3 rounded-full bg-emerald-300/20 inline-flex" />
         </HeroOrbit>
+        */}
       </div>
 
       <div className="container relative z-10">
