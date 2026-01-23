@@ -29,7 +29,7 @@ export const Footer = () => {
           {/* Left side - Copyright */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="text-white/40">
-              &copy; {currentYear} • Crafted with{" "}
+              &copy; {currentYear} • Built with{" "}
               <span className="text-red-400">Grind</span> &{" "}
               <span className="text-amber-400">☕</span>
             </div>

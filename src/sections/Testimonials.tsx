@@ -58,7 +58,7 @@ export const TestimonialsSection = () => {
               <Fragment key={idx}>
                 {testimonials.map((testimonial) => (
                   <Card
-                    key={testimonial.name}
+                    key={`${idx}-${testimonial.name}`}
                     className="max-w-xs p-6 md:p-8 md:max-w-md hover:rotate-3 transition duration-300 flex-shrink-0"
                   >
                     <div className="flex items-center gap-4 ">
@@ -81,8 +81,7 @@ export const TestimonialsSection = () => {
                     </p>
                   </Card>
                 ))}
-              </Fragment>
-            ))}
+              </Fragment>            ))}
           </div>
         </div>
       </div>

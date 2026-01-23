@@ -10,15 +10,16 @@ import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Personal Project",
+    year: "2024",
+    title: "Spherespace",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Real-time chat with WebSocket messaging" },
+      { title: "Live streaming with host controls" },
+      { title: "Gamification with achievements & streaks" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/aaziblim/spaceSphere-hangout",
+    demoLink: "",
     image: darkSaasLandingPage,
   },
   {
@@ -31,6 +32,7 @@ const portfolioProjects = [
       { title: "Increased brand awareness by 15%" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
+    demoLink: "https://demo.lightsaas.com",
     image: lightSaasLandingPage,
   },
   {
@@ -43,6 +45,7 @@ const portfolioProjects = [
       { title: "Increased mobile traffic by 35%" },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
+    demoLink: "https://demo.aistartup.com",
     image: aiStartupLandingPage,
   },
 ];
@@ -86,24 +89,21 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
-<div className="flex flex-col md:flex-row md:gap-4">
-  <div>
-  
-                    <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
-                      <span className="">Visit Project</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-</div>
+                  <div className="flex flex-col md:flex-row md:gap-4">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                        <span>Visit Project</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
 
-                    <div>
-                       <button className="bg-white/90 from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
-                      <span className="">See Demo</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                    </div>
-</div>
-                  </a>
+                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                      <button className="bg-white/90 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                        <span>See Demo</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                  </div>
                 </div>
 
                 <div className=" relative">

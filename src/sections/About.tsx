@@ -159,7 +159,7 @@ const constraintRef =  useRef(null);
     <Card className="h-[320px] p-0 md:col-span-2 lg:col-span-1 relative">
       <Image src={MapImage} alt="Map" className="h-full w-full object-cover" />
       <div className=" size-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  
-      after:content-[''] after:absolute after:inset-0 after:outline-2 after:rounded-full after:-outline-gray950/30">
+      after:content-[''] after:absolute after:inset-0 after:outline-2 after:rounded-full after:outline-gray950/30">
         <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]">
 
         </div>
