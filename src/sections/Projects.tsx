@@ -19,7 +19,7 @@ const portfolioProjects = [
       { title: "Gamification with achievements & streaks" },
     ],
     link: "https://github.com/aaziblim/spaceSphere-hangout",
-    demoLink: "",
+    demoLink: "https://vimeo.com/1157667528?fl=ip&fe=ec",
     image: darkSaasLandingPage,
   },
   {
