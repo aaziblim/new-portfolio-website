@@ -24,6 +24,10 @@ const nextConfig = {
     optimizeCss: true,
   },
 
+  // Empty turbopack config to acknowledge webpack-only config
+  // (Next.js 16 defaults to Turbopack but we have custom webpack SVG handling)
+  turbopack: {},
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
