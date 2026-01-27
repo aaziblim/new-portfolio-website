@@ -15,11 +15,11 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Created with the help of Frontend Tribe",
-  keywords: ["portfolio", "frontend", "developer"],
+  title: "Abdul-Aziz Ziblim | Full-Stack Developer",
+  description: "Full-Stack Developer & Mobile Engineer. I build modern web and mobile applications with React, Next.js, React Native, and Python/Django.",
+  keywords: ["Abdul-Aziz Ziblim", "Full-Stack Developer", "Mobile Engineer", "React", "Next.js", "Django", "portfolio"],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 };
 

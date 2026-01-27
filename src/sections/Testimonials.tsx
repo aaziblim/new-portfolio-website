@@ -2,10 +2,9 @@ import memojiAvatar1 from "@assets/images/memoji-avatar-1.png";
 import memojiAvatar2 from "@assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@assets/images/memoji-avatar-4.png";
-import memojiAvatar5 from "@assets/images/memoji-avatar-5.png";
 import { HeaderSection } from "@/components/HeaderSection";
 import Image from "next/image";
-import GrainImage from "@assets/images/grain.jpg";
+
 import { Card } from "@/components/Card";
 import { Fragment } from "react";
 
