@@ -18,11 +18,11 @@ export const HeroSection = () => {
           style={{ backgroundImage: `url(${GrainImage})` }}
         ></div>
 
-        <div className="hero_ring size-[0620px] lg:size-[40vw] "></div>
-        <div className="hero_ring size-[0820px] lg:size-[55vw]"></div>
-        <div className="hero_ring size-[1020px] lg:size-[70vw]"></div>
-        <div className="hero_ring size-[1220px] lg:size-[85vw]"></div>
-        <div className="hero_ring size-[1420px] lg:size-[100vw]"></div>
+        <div className="hero_ring size-[40vw] md:size-[500px] lg:size-[40vw]"></div>
+        <div className="hero_ring size-[55vw] md:size-[650px] lg:size-[55vw]"></div>
+        <div className="hero_ring size-[70vw] md:size-[800px] lg:size-[70vw]"></div>
+        <div className="hero_ring size-[85vw] md:size-[950px] lg:size-[85vw]"></div>
+        <div className="hero_ring size-[100vw] md:size-[1100px] lg:size-[100vw]"></div>
 
         {/* <HeroOrbit size={800} rotate={-72}>
           <StarIcon className="size-28 text-emerald-300 inline-flex" />
