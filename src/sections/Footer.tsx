@@ -33,9 +33,7 @@ export const Footer = () => {
               <span className="text-red-400">Grind</span> &{" "}
               <span className="text-amber-400">☕</span>
             </div>
-            <div className="text-white/20 text-xs font-mono hidden md:block">
-              {`v1.0.0 • Built different™ • No bugs, only features`}
-            </div>
+
           </div>
 
           {/* Center - Nav links */}

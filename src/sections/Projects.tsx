@@ -1,6 +1,6 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import spherespaceImage from "@/assets/images/spacephere homepage.png";
+import aceItImage from "@/assets/images/ace-it homepage.png";
+import portfolioImage from "@/assets/images/portfolio image.png";
 import Image from "next/image";
 import CheckIcon from "@assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
@@ -20,33 +20,36 @@ const portfolioProjects = [
     ],
     link: "https://github.com/aaziblim/spaceSphere-hangout",
     demoLink: "https://vimeo.com/1157667528?fl=ip&fe=ec",
-    image: darkSaasLandingPage,
+    image: spherespaceImage,
+    isPrivate: false,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "School Project",
+    year: "2025",
+    title: "ACE IT - AI Learning Assistant",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "AI tutor with course & flashcard generation" },
+      { title: "React Native + Expo + Supabase stack" },
+      { title: "Personalized study plans" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    demoLink: "https://demo.lightsaas.com",
-    image: lightSaasLandingPage,
+    link: "",
+    demoLink: "https://drive.google.com/file/d/1MWoaVTanJlVGbApranXWrs7Zuh_7TpUN/view?usp=sharing",
+    image: aceItImage,
+    isPrivate: true,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Personal Project",
+    year: "2025",
+    title: "Developer Portfolio",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Modern Next.js 14 with App Router" },
+      { title: "Responsive design with Tailwind CSS" },
+      { title: "Smooth animations & dark theme aesthetic" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    demoLink: "https://demo.aistartup.com",
-    image: aiStartupLandingPage,
+    link: "https://github.com/aaziblim/new-portfolio-website",
+    demoLink: "",
+    image: portfolioImage,
+    isPrivate: false,
   },
 ];
 
@@ -74,8 +77,21 @@ export const ProjectsSection = () => {
                     <span>{project.year}</span>
                   </div>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5">
+                  <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5 flex items-center gap-3 flex-wrap">
                     {project.title}
+                    {project.isPrivate && (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-white/10 text-white/70 rounded-full border border-white/20">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                          className="size-3"
+                        >
+                          <path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" />
+                        </svg>
+                        Private
+                      </span>
+                    )}
                   </h3>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
@@ -90,28 +106,46 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <div className="flex flex-col md:flex-row md:gap-4">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
-                        <span>Visit Project</span>
-                        <ArrowUpRightIcon className="size-4" />
-                      </button>
-                    </a>
+                    {project.link && (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                          <span>View Code</span>
+                          <ArrowUpRightIcon className="size-4" />
+                        </button>
+                      </a>
+                    )}
 
-                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-white/90 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
-                        <span>See Demo</span>
-                        <ArrowUpRightIcon className="size-4" />
-                      </button>
-                    </a>
+                    {project.demoLink && (
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                        <button className="bg-white/90 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                          <span>See Demo</span>
+                          <ArrowUpRightIcon className="size-4" />
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                <div className=" relative">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
-                  />
+                <div className="relative">
+                  <div className="mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-auto">
+                    <div className="rounded-t-xl overflow-hidden border border-white/10 shadow-2xl bg-gray-900">
+                      {/* Browser chrome bar */}
+                      <div className="bg-gray-800/80 px-4 py-2 flex items-center gap-2">
+                        <div className="flex gap-1.5">
+                          <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
+                          <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                          <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <div className="flex-1 bg-gray-700/50 rounded-md h-5 ml-2"></div>
+                      </div>
+                      {/* Screenshot */}
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-auto max-h-[300px] md:max-h-[350px] lg:max-h-none object-cover object-top"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>

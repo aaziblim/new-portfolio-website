@@ -190,7 +190,7 @@ const ContactPage = () => {
                   <input
                     type="text"
                     name="subject"
-                    placeholder="What's this about?"
+                    placeholder="What&apos;s this about?"
                     className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
                   />
                 </div>

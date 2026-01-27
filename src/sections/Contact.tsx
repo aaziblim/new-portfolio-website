@@ -1,48 +1,49 @@
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
-import GrainImage from "@assets/images/grain.jpg";
-import StarIcon from "@assets/icons/star.svg";
+import { Card } from "@/components/Card";
+import { HeaderSection } from "@/components/HeaderSection";
 
 export const ContactSection = () => {
   return (
     <section id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container">
-        <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-0">
-          {/* Grain overlay */}
-          <div
-            className="absolute inset-0 -z-10 opacity-5"
-            style={{ backgroundImage: `url(${GrainImage.src})` }}
-          ></div>
+        <HeaderSection
+          title="Get In Touch"
+          eyebrow="Let&apos;s Connect"
+          description="Have a project in mind? I&apos;d love to hear about it."
+        />
 
-          {/* Decorative stars */}
-          <StarIcon className="size-12 text-gray-900/10 absolute -top-2 -left-2 md:size-16" />
-          <StarIcon className="size-8 text-gray-900/10 absolute bottom-4 right-8 md:size-12" />
+        <div className="mt-12 lg:mt-16">
+          <Card className="p-8 md:p-12 lg:p-16">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center text-center md:text-left">
+              <div className="flex-1">
+                <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl">
+                  <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                    Let&apos;s build
+                  </span>{" "}
+                  something great together
+                </h2>
+                <p className="text-sm md:text-base lg:text-lg mt-4 text-white/60 max-w-xl">
+                  Looking for a developer who cares about quality and detail? I&apos;m available for freelance projects and collaborations.
+                </p>
+              </div>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-            <div className="flex-1">
-              <h2 className="font-serif text-2xl md:text-3xl">
-                Let&apos;s build something epic together 
-              </h2>
-              <p className="text-sm md:text-base mt-2 text-gray-900/80">
-                Ready to bring your next project to life? I promise I won&apos;t mass produce your website.
-                <span className="hidden md:inline"> DMs are open. No cap. </span>
-                <span className="text-xs opacity-60">(I speak fluent meme)</span>
-              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 px-6 h-12 rounded-xl hover:opacity-90 transition duration-300 font-semibold whitespace-nowrap"
+                >
+                  <span>Contact Me</span>
+                  <ArrowUpRightIcon className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+                <a
+                  href="mailto:azizmeltzer@gmail.com"
+                  className="group inline-flex items-center justify-center gap-2 border border-white/15 text-white/90 px-6 h-12 rounded-xl hover:bg-white/5 transition duration-300 font-semibold whitespace-nowrap"
+                >
+                  <span>📧 Email</span>
+                </a>
+              </div>
             </div>
-            <div>
-              <a
-                href="mailto:contact@yourportfolio.com"
-                className="group inline-flex items-center gap-2 bg-gray-900 text-white border border-gray-900 px-6 h-12 rounded-xl hover:bg-gray-800 transition duration-300 font-semibold whitespace-nowrap"
-              >
-                <span>👋 Contact Me</span>
-                <ArrowUpRightIcon className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            </div>
-          </div>
-
-          {/* Easter egg for nerds */}
-          <div className="mt-4 text-xs text-gray-900/50 font-mono hidden md:block">
-            {`// TODO: Reply to this human's email`}
-          </div>
+          </Card>
         </div>
       </div>
     </section>

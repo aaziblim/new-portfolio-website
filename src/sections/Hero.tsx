@@ -73,12 +73,11 @@ export const HeroSection = () => {
           </div>
           <div className="max-w-lg mx-auto lg:max-w-3xl">
             <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-wide">
-              Building Exceptional User experiences
+              Full-Stack Developer & Mobile Engineer
             </h1>
             <p className="mt-4 text-center text-white/60 md:text-base lg:text-lg">
-              We specialize in creating user-friendly interfaces that enhance
-              the overall user experience. Let's connect to discuss the projects
-              you have.😎
+              I build modern web and mobile applications with React, Next.js,
+              React Native, and Python/Django. Let&apos;s bring your ideas to life.
             </p>
           </div>
 
@@ -87,7 +86,7 @@ export const HeroSection = () => {
               href="#projects"
               className="group inline-flex items-center gap-2 bg-white text-gray-900 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl hover:bg-white/90 hover:text-gray-900 transition duration-300 font-semibold"
             >
-              <span className="mr-2">👀 Explore my work below</span>
+              <span className="mr-2">Explore my work below</span>
               <ArrowDown className="size-4 group-hover:translate-y-0.5 transition-all" />
             </Link>
 

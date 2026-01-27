@@ -11,35 +11,31 @@ import { Fragment } from "react";
 
 const testimonials = [
   {
-    name: "Alex Turner",
-    position: "Marketing Manager @ TechStartups",
-    text: "Alex was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiAvatar1,
-  },
-  {
-    name: "Olivia Green",
-    position: "Head of Design @ GreenLeaf",
-    text: "Working with Alex was a pleasure. His expertise in frontend development brought our designs to life in a way we never imagined. The website has exceeded our expectations.",
+    name: "Kwabena Obeng",
+    position: "AI/ML LEAD @ Phrontlyne Technologies Limited",
+    text: "Abdul-Aziz demonstrates solid software engineering fundamentals and a practical understanding of applied AI. From discussions around his projects, his use of LLM APIs shows good judgment and a focus on real-world product value.",
     avatar: memojiAvatar2,
   },
   {
-    name: "Daniel White",
-    position: "CEO @ InnovateCo",
-    text: "Alex's ability to create seamless user experiences is unmatched. Our website has seen a significant increase in conversions since launching the new design. We couldn't be happier.",
-    avatar: memojiAvatar3,
-  },
-  {
-    name: "Emily Carter",
-    position: "Product Manager @ GlobalTech",
-    text: "Alex is a true frontend wizard. He took our complex product and transformed it into an intuitive and engaging user interface. We're already seeing positive feedback from our customers.",
+    name: "Jonathan Mensah",
+    position: "Software Engineering @ KNUST E-Learning Center",
+    text: "Working with Abdul-Aziz at the KNUST E-Learning Center has been a positive experience. He is highly dedicated and consistently goes the extra mile to deliver strong prototypes under tight timelines. Abdul-Aziz asks thoughtful, technically grounded questions that improve the overall quality of our work. He is fast-learning, effective, and dependable when it comes to building and delivering projects.",
     avatar: memojiAvatar4,
   },
   {
-    name: "Michael Brown",
-    position: "Director of IT @ MegaCorp",
-    text: "Alex's work on our website has been nothing short of exceptional. He's a talented developer who is also a great communicator. We highly recommend him.",
-    avatar: memojiAvatar5,
+    name: "Issifu Fatimata",
+    position: "IT Consultant",
+    text: "Abdul-Aziz demonstrates strong full-stack development skills and a solid understanding of modern web and mobile technologies. From reviewing his projects and technical approach, it’s clear he can design and implement complete solutions using React, Django, and related tools. His work reflects good structure, practical problem-solving, and attention to maintainability.",
+    avatar: memojiAvatar1,
   },
+
+  {
+    name: "Sibdou Issifu",
+    position: "Program Manager @ GeekByte",
+    text: "Abdul-Aziz served as the Python Instructor for the GeekByte Python Track, where he demonstrated strong technical expertise and clear teaching methods. He consistently simplified complex programming concepts, making them accessible to beginners, and actively supported learners through practical exercises and mentorship. His reliability, collaborative approach, and passion for tech education contributed significantly to the success of the Python cohort.",
+    avatar: memojiAvatar3,
+  },
+
 ];
 
 export const TestimonialsSection = () => {
@@ -47,9 +43,9 @@ export const TestimonialsSection = () => {
     <div className="py-16 lg:py-24">
       <div className="container">
         <HeaderSection
-          title="Happy Clients"
-          eyebrow="What Clients say about me"
-          description="Don't just take my word for it. Here's what my clients have to say."
+          title="Great Collaborations"
+          eyebrow="What Colleagues Say About Me"
+          description="Peer feedback from academic and personal projects"
         />
 
         <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
@@ -81,7 +77,7 @@ export const TestimonialsSection = () => {
                     </p>
                   </Card>
                 ))}
-              </Fragment>            ))}
+              </Fragment>))}
           </div>
         </div>
       </div>
