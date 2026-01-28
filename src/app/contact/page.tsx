@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import GrainImage from "@/assets/images/grain.jpg";
 import Link from "next/link";
 
 const ContactPage = () => {
@@ -34,110 +33,97 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="py-16 md:py-24 relative z-0 min-h-screen">
-      {/* Subtle background */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: `url(${GrainImage.src})` }}
-        ></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/5 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container max-w-4xl relative z-10">
+    <div className="py-16 md:py-24 min-h-screen">
+      <div className="container max-w-3xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-emerald-400 font-medium tracking-wide uppercase text-sm mb-3">
+        <div className="mb-12">
+          <p className="text-emerald-400 font-medium text-sm mb-2">
             Contact
           </p>
-          <h1 className="font-serif text-3xl md:text-5xl tracking-wide">
+          <h1 className="font-serif text-3xl md:text-4xl">
             Let&apos;s Work Together
           </h1>
-          <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Have a project in mind or just want to chat? Fill out the form below
-            and I&apos;ll get back to you within 24 hours.
+          <p className="mt-3 text-white/50 max-w-md">
+            Have a project in mind? Fill out the form and I&apos;ll get back to you within 24 hours.
           </p>
         </div>
 
         {/* Success State */}
         {submitted ? (
-          <div className="max-w-lg mx-auto text-center">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-10">
-              <div className="size-16 mx-auto mb-6 rounded-full bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center">
-                <svg
-                  className="size-8 text-emerald-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <h2 className="font-serif text-2xl mb-3">Message Sent</h2>
-              <p className="text-white/60 mb-8">
-                Thank you for reaching out. I&apos;ll review your message and
-                respond as soon as possible.
-              </p>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+          <div className="bg-gray-800 rounded-2xl p-8">
+            <div className="size-12 mb-5 rounded-full bg-emerald-400/10 flex items-center justify-center">
+              <svg
+                className="size-6 text-emerald-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  className="size-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                  />
-                </svg>
-                Back to Home
-              </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
             </div>
+            <h2 className="font-semibold text-xl text-white mb-2">Message Sent</h2>
+            <p className="text-white/50 mb-6">
+              Thank you for reaching out. I&apos;ll review your message and respond as soon as possible.
+            </p>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium"
+            >
+              <svg
+                className="size-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              Back to Home
+            </Link>
           </div>
         ) : (
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-12">
             {/* Left side - Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                <h3 className="text-xs font-medium text-white/40 uppercase tracking-wider mb-3">
                   Email
                 </h3>
                 <a
                   href="mailto:azizmeltzer@gmail.com"
-                  className="text-white hover:text-emerald-400 transition-colors"
+                  className="text-sm text-white hover:text-emerald-400 transition-colors"
                 >
                   azizmeltzer@gmail.com
                 </a>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                <h3 className="text-xs font-medium text-white/40 uppercase tracking-wider mb-3">
                   Location
                 </h3>
-                <p className="text-white">Kumasi, Ghana</p>
-                <p className="text-white/50 text-sm mt-1">GMT+0</p>
+                <p className="text-sm text-white">Kumasi, Ghana</p>
+                <p className="text-xs text-white/40 mt-1">GMT+0</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                <h3 className="text-xs font-medium text-white/40 uppercase tracking-wider mb-3">
                   Socials
                 </h3>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1.5">
                   <a
                     href="https://github.com/aaziblim"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-emerald-400 transition-colors"
+                    className="text-sm text-white hover:text-emerald-400 transition-colors"
                   >
                     GitHub
                   </a>
@@ -145,7 +131,7 @@ const ContactPage = () => {
                     href="http://www.linkedin.com/in/azizjibril"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-emerald-400 transition-colors"
+                    className="text-sm text-white hover:text-emerald-400 transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -155,10 +141,10 @@ const ContactPage = () => {
 
             {/* Right side - Form */}
             <div className="md:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-white/70 mb-2">
+                    <label className="block text-xs font-medium text-white/50 mb-2">
                       Name <span className="text-emerald-400">*</span>
                     </label>
                     <input
@@ -166,11 +152,11 @@ const ContactPage = () => {
                       name="name"
                       required
                       placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-transparent focus:outline-none focus:border-white/10 transition-colors placeholder:text-white/30"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-white/70 mb-2">
+                    <label className="block text-xs font-medium text-white/50 mb-2">
                       Email <span className="text-emerald-400">*</span>
                     </label>
                     <input
@@ -178,32 +164,32 @@ const ContactPage = () => {
                       name="email"
                       required
                       placeholder="you@example.com"
-                      className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-transparent focus:outline-none focus:border-white/10 transition-colors placeholder:text-white/30"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">
+                  <label className="block text-xs font-medium text-white/50 mb-2">
                     Subject
                   </label>
                   <input
                     type="text"
                     name="subject"
-                    placeholder="What&apos;s this about?"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors placeholder:text-white/30"
+                    placeholder="What's this about?"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-transparent focus:outline-none focus:border-white/10 transition-colors placeholder:text-white/30"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-white/70 mb-2">
+                    <label className="block text-xs font-medium text-white/50 mb-2">
                       Budget
                     </label>
                     <div className="relative">
                       <select
                         name="budget"
-                        className="appearance-none w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors pr-10"
+                        className="appearance-none w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-transparent focus:outline-none focus:border-white/10 transition-colors pr-10"
                         defaultValue=""
                       >
                         <option value="" disabled>
@@ -215,7 +201,7 @@ const ContactPage = () => {
                         <option value="10000-plus">$10,000+</option>
                         <option value="not-sure">Not sure yet</option>
                       </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white/40">
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white/30">
                         <svg
                           className="size-4"
                           fill="none"
@@ -234,13 +220,13 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-white/70 mb-2">
+                    <label className="block text-xs font-medium text-white/50 mb-2">
                       Project Type
                     </label>
                     <div className="relative">
                       <select
                         name="type"
-                        className="appearance-none w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors pr-10"
+                        className="appearance-none w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-transparent focus:outline-none focus:border-white/10 transition-colors pr-10"
                         defaultValue=""
                       >
                         <option value="" disabled>
@@ -252,7 +238,7 @@ const ContactPage = () => {
                         <option value="consultation">Consultation</option>
                         <option value="other">Other</option>
                       </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white/40">
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white/30">
                         <svg
                           className="size-4"
                           fill="none"
@@ -272,7 +258,7 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">
+                  <label className="block text-xs font-medium text-white/50 mb-2">
                     Message <span className="text-emerald-400">*</span>
                   </label>
                   <textarea
@@ -280,14 +266,14 @@ const ContactPage = () => {
                     rows={5}
                     required
                     placeholder="Tell me about your project..."
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-800 focus:outline-none focus:border-emerald-400/50 transition-colors resize-none placeholder:text-white/30"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-transparent focus:outline-none focus:border-white/10 transition-colors resize-none placeholder:text-white/30"
                   />
                 </div>
 
-                <div className="flex items-center justify-between pt-2">
+                <div className="flex items-center justify-between pt-3">
                   <Link
                     href="/"
-                    className="text-sm text-white/50 hover:text-white transition-colors"
+                    className="text-sm text-white/40 hover:text-white transition-colors"
                   >
                     ← Back to home
                   </Link>
@@ -295,7 +281,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors disabled:opacity-50"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-medium text-sm px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <>
