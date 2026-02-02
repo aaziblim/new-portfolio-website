@@ -31,6 +31,12 @@ const config: Config = {
         'ping-large': "ping-large 1s ease-in-out infinite",
         'move-left': "move-left 30s linear infinite",
         'move-right': "move-right 30s linear infinite",
+        'fade-in-up': "fade-in-up 0.6s ease-out forwards",
+        'fade-in-up-1': "fade-in-up 0.6s ease-out 0.1s forwards",
+        'fade-in-up-2': "fade-in-up 0.6s ease-out 0.2s forwards",
+        'fade-in-up-3': "fade-in-up 0.6s ease-out 0.3s forwards",
+        'fade-in-up-4': "fade-in-up 0.6s ease-out 0.4s forwards",
+        'fade-in-up-5': "fade-in-up 0.6s ease-out 0.5s forwards",
       },
 
       keyframes: {
@@ -58,6 +64,16 @@ const config: Config = {
           },
           '100%': {
             transform: 'translateX(0)',
+          },
+        },
+        'fade-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
           },
         },
       }

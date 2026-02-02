@@ -57,11 +57,11 @@ export const HeroSection = () => {
         <div className="flex flex-col items-center">
           <Image
             src={MemojiImage}
-            className="size-[100px]"
+            className="size-[100px] opacity-0 animate-fade-in-up"
             alt="a man sitting behind a laptop"
           />
 
-          <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
+          <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg opacity-0 animate-fade-in-up-1">
             <div className="relative flex items-center justify-center">
               <div className="size-2.5 rounded-full bg-green-500"></div>
               <div className="absolute size-2.5 bg-green-500 rounded-full animate-ping-large"></div>
@@ -72,16 +72,16 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="max-w-lg mx-auto lg:max-w-3xl">
-            <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-wide">
+            <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-wide opacity-0 animate-fade-in-up-2">
               Full-Stack Developer & Mobile Engineer
             </h1>
-            <p className="mt-4 text-center text-white/60 md:text-base lg:text-lg">
+            <p className="mt-4 text-center text-white/60 md:text-base lg:text-lg opacity-0 animate-fade-in-up-3">
               I build modern web and mobile applications with React, Next.js,
               React Native, and Python/Django. Let&apos;s bring your ideas to life.
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 opacity-0 animate-fade-in-up-4">
             <Link
               href="#projects"
               className="group inline-flex items-center gap-2 bg-white text-gray-900 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl hover:bg-white/90 hover:text-gray-900 transition duration-300 font-semibold"

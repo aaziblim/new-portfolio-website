@@ -57,17 +57,19 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="pb-16 lg:py-24">
       <div className="container">
-        <HeaderSection
-          title="Real-world Results"
-          eyebrow="Featured Projects"
-          description="See how I transformed concepts into engaging digital experiences."
-        />
+        <div className="opacity-0 animate-fade-in-up">
+          <HeaderSection
+            title="Real-world Results"
+            eyebrow="Featured Projects"
+            description="See how I transformed concepts into engaging digital experiences."
+          />
+        </div>
 
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
           {portfolioProjects.map((project) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              className="group px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 opacity-0 animate-fade-in-up-2 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 transition-all duration-[180ms] ease-out"
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
@@ -107,19 +109,19 @@ export const ProjectsSection = () => {
                   </ul>
                   <div className="flex flex-col md:flex-row md:gap-4">
                     {project.link && (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="group/btn">
+                        <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8 transition-opacity duration-[180ms] ease-out hover:opacity-90">
                           <span>View Code</span>
-                          <ArrowUpRightIcon className="size-4" />
+                          <ArrowUpRightIcon className="size-4 transition-transform duration-[180ms] ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                         </button>
                       </a>
                     )}
 
                     {project.demoLink && (
-                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                        <button className="bg-white/90 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8">
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="group/demo">
+                        <button className="bg-white/90 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8 transition-opacity duration-[180ms] ease-out hover:opacity-90">
                           <span>See Demo</span>
-                          <ArrowUpRightIcon className="size-4" />
+                          <ArrowUpRightIcon className="size-4 transition-transform duration-[180ms] ease-out group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5" />
                         </button>
                       </a>
                     )}
@@ -142,7 +144,7 @@ export const ProjectsSection = () => {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-auto max-h-[300px] md:max-h-[350px] lg:max-h-none object-cover object-top"
+                        className="w-full h-auto max-h-[300px] md:max-h-[350px] lg:max-h-none object-cover object-top transition-transform duration-[180ms] ease-out group-hover:-translate-y-1"
                       />
                     </div>
                   </div>
