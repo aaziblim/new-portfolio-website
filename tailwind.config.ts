@@ -25,7 +25,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: "var(--font-sans)",
-        serif: "var(--font-serif)",
+        serif: "var(--font-sans)",
       },
       animation: {
         'ping-large': "ping-large 1s ease-in-out infinite",

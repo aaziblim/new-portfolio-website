@@ -79,7 +79,7 @@ export const ProjectsSection = () => {
                     <span>{project.year}</span>
                   </div>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5 flex items-center gap-3 flex-wrap">
+                  <h3 className="font-serif font-bold text-2xl md:text-4xl mt-2 md:mt-5 flex items-center gap-3 flex-wrap">
                     {project.title}
                     {project.isPrivate && (
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-white/10 text-white/70 rounded-full border border-white/20">

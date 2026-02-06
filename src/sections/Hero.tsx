@@ -72,7 +72,7 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="max-w-lg mx-auto lg:max-w-3xl">
-            <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-wide opacity-0 animate-fade-in-up-2">
+            <h1 className="font-serif font-extrabold text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-tight opacity-0 animate-fade-in-up-2">
               Full-Stack Developer & Mobile Engineer
             </h1>
             <p className="mt-4 text-center text-white/60 md:text-base lg:text-lg opacity-0 animate-fade-in-up-3">

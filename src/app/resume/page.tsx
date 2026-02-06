@@ -24,7 +24,7 @@ const ResumePage = () => {
       <div className="container max-w-3xl mx-auto px-6">
         {/* Header */}
         <header className="mb-16">
-          <h1 className="font-serif text-4xl md:text-5xl tracking-wide mb-4">
+          <h1 className="font-serif font-bold text-4xl md:text-5xl tracking-wide mb-4">
             Abdul-Aziz Ziblim
           </h1>
           <p className="text-white/60 text-lg mb-6">

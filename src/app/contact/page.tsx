@@ -40,7 +40,7 @@ const ContactPage = () => {
           <p className="text-emerald-400 font-medium text-sm mb-2">
             Contact
           </p>
-          <h1 className="font-serif text-3xl md:text-4xl">
+          <h1 className="font-serif font-bold text-3xl md:text-4xl">
             Let&apos;s Work Together
           </h1>
           <p className="mt-3 text-white/50 max-w-md">

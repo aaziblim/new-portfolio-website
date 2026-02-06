@@ -18,7 +18,7 @@ export const HeaderSection = ({
         </p>
       </div>
 
-      <h2 className="font-serif text-3xl md:text-5xl justify-center text-center mt-6">
+      <h2 className="font-serif font-extrabold text-3xl md:text-5xl justify-center text-center mt-6">
         {eyebrow}
       </h2>
       <p className="text-center md:text-lg lg:text-xl text-white/40 mt-4 max-w-md mx-auto">
