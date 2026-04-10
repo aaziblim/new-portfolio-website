@@ -183,6 +183,26 @@ const ResumePage = () => {
             <div className="group">
               <div className="flex items-baseline justify-between mb-1">
                 <h3 className="font-medium text-white group-hover:text-emerald-300 transition-colors">
+                  Event Management Platform
+                </h3>
+                <a
+                  href="https://github.com/aaziblim/Event-management-system"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-white/40 hover:text-white transition-colors"
+                >
+                  View â†—
+                </a>
+              </div>
+              <p className="text-white/50 text-sm mb-2">Next.js App Router Â· TypeScript Â· Prisma Â· PostgreSQL Â· Tailwind CSS</p>
+              <p className="text-white/60 text-sm">
+                Built a production-quality event operations MVP for event publishing, attendee registration, QR ticketing, reminder emails, and admin check-in tracking. Designed the system around reusable multi-event workflows rather than a single event campaign.
+              </p>
+            </div>
+
+            <div className="group">
+              <div className="flex items-baseline justify-between mb-1">
+                <h3 className="font-medium text-white group-hover:text-emerald-300 transition-colors">
                   Developer Portfolio
                 </h3>
                 <a

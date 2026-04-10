@@ -1,5 +1,6 @@
 import spherespaceImage from "@/assets/images/spacephere homepage.png";
 import aceItImage from "@/assets/images/ace-it homepage.png";
+import eventManagementImage from "@/assets/images/event management.png";
 import portfolioImage from "@/assets/images/portfolio image.png";
 import Image from "next/image";
 import CheckIcon from "@assets/icons/check-circle.svg";
@@ -14,9 +15,9 @@ const portfolioProjects = [
     year: "2024",
     title: "Spherespace",
     results: [
-      { title: "Real-time chat with WebSocket messaging" },
-      { title: "Live streaming with host controls" },
-      { title: "Gamification with achievements & streaks" },
+      { title: "Real-time chat messaging" },
+      { title: "Live streaming controls" },
+      { title: "Achievements and streaks" },
     ],
     link: "https://github.com/aaziblim/spaceSphere-hangout",
     demoLink: "https://vimeo.com/1157667528?fl=ip&fe=ec",
@@ -28,23 +29,37 @@ const portfolioProjects = [
     year: "2025",
     title: "ACE IT - AI Learning Assistant",
     results: [
-      { title: "AI tutor with course & flashcard generation" },
-      { title: "React Native + Expo + Supabase stack" },
+      { title: "AI tutor and flashcards" },
+      { title: "React Native and Supabase" },
       { title: "Personalized study plans" },
     ],
     link: "",
     demoLink: "https://drive.google.com/file/d/1MWoaVTanJlVGbApranXWrs7Zuh_7TpUN/view?usp=sharing",
     image: aceItImage,
-    isPrivate: true,
+    isPrivate: false,
+  },
+  {
+    company: "Personal Project",
+    year: "2026",
+    title: "Event Management Platform",
+    results: [
+      { title: "Multi-event session management" },
+      { title: "QR ticketing and check-in" },
+      { title: "Next.js with Prisma ORM" },
+    ],
+    link: "https://github.com/aaziblim/Event-management-system",
+    demoLink: "",
+    image: eventManagementImage,
+    isPrivate: false,
   },
   {
     company: "Personal Project",
     year: "2025",
     title: "Developer Portfolio",
     results: [
-      { title: "Modern Next.js 14 with App Router" },
-      { title: "Responsive design with Tailwind CSS" },
-      { title: "Smooth animations & dark theme aesthetic" },
+      { title: "Next.js App Router build" },
+      { title: "Responsive Tailwind design" },
+      { title: "Smooth animated interface" },
     ],
     link: "https://github.com/aaziblim/new-portfolio-website",
     demoLink: "",
@@ -79,31 +94,22 @@ export const ProjectsSection = () => {
                     <span>{project.year}</span>
                   </div>
 
-                  <h3 className="font-serif font-bold text-2xl md:text-4xl mt-2 md:mt-5 flex items-center gap-3 flex-wrap">
-                    {project.title}
-                    {project.isPrivate && (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-white/10 text-white/70 rounded-full border border-white/20">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                          className="size-3"
-                        >
-                          <path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" />
-                        </svg>
-                        Private
-                      </span>
-                    )}
-                  </h3>
+                  <div className="mt-2 md:mt-5 min-h-[72px] md:min-h-[92px]">
+                    <h3 className="max-w-[18ch] font-serif font-bold text-[clamp(1.5rem,3vw,2.25rem)] leading-tight line-clamp-2">
+                      {project.title}
+                    </h3>
+                  </div>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
                       <li
                         key={result.title}
-                        className="flex gap-2 text-sm md:text-base text-white/50"
+                        className="flex min-w-0 gap-2 text-sm md:text-base text-white/50"
                       >
-                        <CheckIcon className="size-5 md:size-6" />
-                        <span>{result.title}</span>
+                        <CheckIcon className="size-5 shrink-0 md:size-6" />
+                        <span className="block whitespace-nowrap">
+                          {result.title}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -140,7 +146,6 @@ export const ProjectsSection = () => {
                         </div>
                         <div className="flex-1 bg-gray-700/50 rounded-md h-5 ml-2"></div>
                       </div>
-                      {/* Screenshot */}
                       <Image
                         src={project.image}
                         alt={project.title}
