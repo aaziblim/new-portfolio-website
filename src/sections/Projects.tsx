@@ -13,7 +13,7 @@ const portfolioProjects = [
   {
     company: "Personal Project",
     year: "2024",
-    title: "Spherespace",
+    title: "Spherespace Hangout",
     results: [
       { title: "Real-time chat messaging" },
       { title: "Live streaming controls" },
@@ -55,7 +55,7 @@ const portfolioProjects = [
   {
     company: "Personal Project",
     year: "2025",
-    title: "Developer Portfolio",
+    title: "This Developer's Portfolio",
     results: [
       { title: "Next.js App Router build" },
       { title: "Responsive Tailwind design" },
@@ -95,7 +95,7 @@ export const ProjectsSection = () => {
                   </div>
 
                   <div className="mt-2 md:mt-5 min-h-[72px] md:min-h-[92px]">
-                    <h3 className="max-w-[18ch] font-serif font-bold text-[clamp(1.5rem,3vw,2.25rem)] leading-tight line-clamp-2">
+                    <h3 className="max-w-[16ch] font-serif font-bold text-[clamp(1.5rem,3vw,2.25rem)] leading-tight line-clamp-2">
                       {project.title}
                     </h3>
                   </div>
