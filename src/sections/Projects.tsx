@@ -36,6 +36,8 @@ const portfolioProjects = [
     link: "",
     demoLink: "https://drive.google.com/file/d/1MWoaVTanJlVGbApranXWrs7Zuh_7TpUN/view?usp=sharing",
     image: aceItImage,
+    imageHeightClass: "max-h-[250px] md:max-h-[300px]",
+    imagePositionClass: "object-center",
     isPrivate: false,
   },
   {
@@ -149,7 +151,7 @@ export const ProjectsSection = () => {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-auto max-h-[300px] md:max-h-[350px] lg:max-h-none object-cover object-top transition-transform duration-[180ms] ease-out group-hover:-translate-y-1"
+                        className={`w-full h-auto ${project.imageHeightClass ?? "max-h-[300px] md:max-h-[350px] lg:max-h-none"} object-cover ${project.imagePositionClass ?? "object-top"} transition-transform duration-[180ms] ease-out group-hover:-translate-y-1`}
                       />
                     </div>
                   </div>
