@@ -7,6 +7,7 @@ import SparkleIcon from "@assets/icons/sparkle.svg";
 import ArrowDown from "@assets/icons/arrow-down.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 
 export const HeroSection = () => {
@@ -82,33 +83,18 @@ export const HeroSection = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 opacity-0 animate-fade-in-up-4">
-            <Link
-              href="#projects"
-              className="group inline-flex items-center gap-2 bg-white text-gray-900 border border-white/15 px-6 h-12 lg:px-6 lg:h-14 rounded-xl hover:bg-white/90 hover:text-gray-900 transition duration-300 font-semibold"
-            >
-              <span className="mr-2">Explore my work below</span>
-              <ArrowDown className="size-4 group-hover:translate-y-0.5 transition-all" />
-            </Link>
+            <Button asChild variant="heroLight" size="hero" className="transition-all duration-200">
+              <Link href="#projects" className="group/button">
+                <span className="mr-2">Explore my work below</span>
+                <ArrowDown className="size-4 transition-transform group-hover/button:translate-y-0.5" />
+              </Link>
+            </Button>
 
-            <Link
-              href="/resume"
-              className="inline-flex items-center gap-2 px-6 h-12 lg:px-6 hover:bg-white/5 lg:h-14 rounded-xl border border-white/15 text-white/90 font-semibold"
-            >
-              <span className="mr-2">📄</span>
-              Check out resume
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
+            <Button asChild variant="heroDark" size="hero" className="transition-all duration-200">
+              <Link href="/resume">
+                Check out resume
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

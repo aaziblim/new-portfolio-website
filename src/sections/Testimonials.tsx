@@ -4,6 +4,7 @@ import memojiAvatar3 from "@assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@assets/images/memoji-avatar-4.png";
 import { HeaderSection } from "@/components/HeaderSection";
 import Image from "next/image";
+import { Card } from "@/components/Card";
 
 const testimonials = [
   {
@@ -53,14 +54,19 @@ export const TestimonialsSection = () => {
         {/* Testimonial Cards Grid */}
         <div className="mt-12 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-5">
           {testimonials.map((testimonial) => (
-            <div
+            <Card
               key={testimonial.name}
-              className="group bg-gray-800 rounded-3xl p-6 md:p-8 flex flex-col min-h-[280px] border border-white/10 hover:border-white/15 hover:bg-gray-800/80 hover:-translate-y-px transition-all duration-150 ease-out"
+              className="group relative bg-gray-800 p-6 md:p-8 flex flex-col min-h-[280px] border border-white/10 hover:border-white/15 transition-colors duration-300 ease-out"
             >
+              <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_40%)]" />
+              <div className="pointer-events-none absolute inset-x-6 top-0 h-px overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[line-sweep_1.6s_ease-in-out_infinite]" />
+              </div>
+
               {/* Subtle quote accent at top */}
-              <div className="mb-4">
+              <div className="relative z-10 mb-4">
                 <svg
-                  className="w-6 h-6 text-white/20 group-hover:text-white/30 transition-colors duration-150"
+                  className="w-6 h-6 text-white/18 transition-colors duration-300"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -69,15 +75,15 @@ export const TestimonialsSection = () => {
               </div>
 
               {/* Quote - Primary element, flex-grow to push identity down */}
-              <div className="flex-1">
+              <div className="relative z-10 flex-1">
                 <p className="text-base text-white/80 leading-relaxed">
                   {testimonial.text}
                 </p>
               </div>
 
 
-              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-white/5">
-                <div className={`size-10 flex-shrink-0 rounded-full bg-gray-900 ring-2 ${testimonial.ringColor} flex items-center justify-center overflow-hidden transition-all duration-150 ease-out group-hover:scale-110`}>
+              <div className="relative z-10 flex items-center gap-3 mt-6 pt-5 border-t border-white/8">
+                <div className={`size-10 flex-shrink-0 rounded-full bg-[#0b1220] ring-2 ${testimonial.ringColor} flex items-center justify-center overflow-hidden transition-all duration-300 ease-out`}>
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
@@ -94,7 +100,7 @@ export const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

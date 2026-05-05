@@ -1,0 +1,5 @@
+
+> portfolio-site-2@0.1.0 dev
+> next dev --webpack -H 127.0.0.1 -p 4000
+
+[?25h

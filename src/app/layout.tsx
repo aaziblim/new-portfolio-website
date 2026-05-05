@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Calistoga, Manrope } from "next/font/google";
+import { Inter, Calistoga, Manrope, Geist } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { cn } from "@assets/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const calistoga = Calistoga({
   subsets: ["latin"],
   variable: "--font-serif",
@@ -138,7 +139,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"
@@ -149,7 +150,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={twMerge(
           "bg-gray-900 text-white antialiased font-sans",
-          inter.variable,
+          geist.variable,
           calistoga.variable,
           manrope.variable
         )}

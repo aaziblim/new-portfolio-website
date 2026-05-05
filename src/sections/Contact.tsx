@@ -1,6 +1,7 @@
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
 import { Card } from "@/components/Card";
 import { HeaderSection } from "@/components/HeaderSection";
+import { Button } from "@/components/ui/button";
 
 export const ContactSection = () => {
   return (
@@ -28,19 +29,17 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 px-6 h-12 rounded-xl hover:opacity-90 transition duration-300 font-semibold whitespace-nowrap"
-                >
-                  <span>Contact Me</span>
-                  <ArrowUpRightIcon className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-                <a
-                  href="mailto:azizmeltzer@gmail.com"
-                  className="group inline-flex items-center justify-center gap-2 border border-white/15 text-white/90 px-6 h-12 rounded-xl hover:bg-white/5 transition duration-300 font-semibold whitespace-nowrap"
-                >
-                  <span>📧 Email</span>
-                </a>
+                <Button asChild variant="heroDark" size="project" className="w-full sm:w-auto">
+                  <a href="/contact" className="group/button">
+                    <span>Contact Me</span>
+                    <ArrowUpRightIcon className="size-4 transition-transform group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5" />
+                  </a>
+                </Button>
+                <Button asChild variant="heroLight" size="project" className="w-full sm:w-auto">
+                  <a href="mailto:azizmeltzer@gmail.com">
+                    <span>📧 Email</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </Card>

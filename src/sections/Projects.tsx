@@ -8,6 +8,7 @@ import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
 import GrainImage from "@assets/images/grain.jpg";
 import { HeaderSection } from "@/components/HeaderSection";
 import { Card } from "@/components/Card";
+import { Button } from "@/components/ui/button";
 
 const portfolioProjects = [
   {
@@ -117,21 +118,31 @@ export const ProjectsSection = () => {
                   </ul>
                   <div className="flex flex-col md:flex-row md:gap-4">
                     {project.link && (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="group/btn">
-                        <button className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8 transition-opacity duration-[180ms] ease-out hover:opacity-90">
+                      <Button
+                        asChild
+                        variant="heroDark"
+                        size="project"
+                        className="mt-8 w-full md:w-auto"
+                      >
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="group/button">
                           <span>View Code</span>
-                          <ArrowUpRightIcon className="size-4 transition-transform duration-[180ms] ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                        </button>
-                      </a>
+                          <ArrowUpRightIcon className="size-4 transition-transform duration-[180ms] ease-out group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5" />
+                        </a>
+                      </Button>
                     )}
 
                     {project.demoLink && (
-                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="group/demo">
-                        <button className="bg-white/90 text-gray-950 font-semibold h-12 w-full md:w-auto md:px-6 rounded-xl inline-flex items-center justify-center gap-2 mt-8 transition-opacity duration-[180ms] ease-out hover:opacity-90">
+                      <Button
+                        asChild
+                        variant="heroLight"
+                        size="project"
+                        className="mt-8 w-full md:w-auto"
+                      >
+                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="group/button">
                           <span>See Demo</span>
-                          <ArrowUpRightIcon className="size-4 transition-transform duration-[180ms] ease-out group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5" />
-                        </button>
-                      </a>
+                          <ArrowUpRightIcon className="size-4 transition-transform duration-[180ms] ease-out group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5" />
+                        </a>
+                      </Button>
                     )}
                   </div>
                 </div>

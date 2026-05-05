@@ -26,17 +26,14 @@ export const Footer = () => {
     <footer className="relative">
       <div className="container">
         <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8">
-          {/* Left side - Copyright */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="text-white/40">
               &copy; {currentYear} • Built with{" "}
               <span className="text-red-400">Grind</span> &{" "}
               <span className="text-amber-400">☕</span>
             </div>
-
           </div>
 
-          {/* Center - Nav links */}
           <nav className="flex flex-wrap justify-center gap-4 md:gap-8">
             {navLinks.map((link) => (
               <Link
@@ -49,7 +46,6 @@ export const Footer = () => {
             ))}
           </nav>
 
-          {/* Right side - Socials */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
               <a
@@ -64,16 +60,6 @@ export const Footer = () => {
               </a>
             ))}
           </div>
-        </div>
-
-        {/* Bottom easter egg section */}
-        <div className="border-t border-white/5 py-4 text-center">
-          <p className="text-white/20 text-xs">
-            🔍 You found the footer! Achievement unlocked: <span className="text-emerald-400/60">Scroll Master</span>
-          </p>
-          <p className="text-white/10 text-[10px] mt-1 font-mono">
-            {`/* If you're reading this, we should probably work together */`}
-          </p>
         </div>
       </div>
     </footer>
