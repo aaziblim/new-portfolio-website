@@ -22,7 +22,7 @@ const buttonVariants = cva(
         nav:
           "border border-white/10 bg-gradient-to-b from-[#1F2937] to-[#111827] text-white/75 shadow-[0_1px_2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.06),inset_0_-1px_0_rgba(0,0,0,0.6)] hover:opacity-95 hover:text-white active:translate-y-0 active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.04)]",
         heroLight:
-          "border-0 bg-gradient-to-b from-[#FDFDFD] to-[#E3E3E3] text-[#2F2F2F] shadow-[0_2px_4px_rgba(0,0,0,0.10),inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(0,0,0,0.08),0_0_1px_rgba(0,0,0,0.15)] hover:opacity-95 active:translate-y-0 active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.6)]",
+          "border border-[#E3E3E3] bg-gradient-to-b from-[#FDFDFD] to-[#E3E3E3] text-[#2F2F2F] shadow-[0_4px_8px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(0,0,0,0.08),0_0_1px_rgba(0,0,0,0.2)] hover:opacity-95 active:translate-y-0 active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.6)]",
         heroDark:
           "border border-white/10 bg-gradient-to-b from-[#1F2937] to-[#111827] text-[#F3F4F6] shadow-[2px_2px_6px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.75),-2px_-2px_4px_rgba(255,255,255,0.04)] hover:opacity-95 active:translate-y-0 active:shadow-[inset_2px_2px_6px_rgba(0,0,0,0.78),inset_-2px_-2px_4px_rgba(255,255,255,0.04)]",
       },

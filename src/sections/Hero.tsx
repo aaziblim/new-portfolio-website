@@ -85,7 +85,7 @@ export const HeroSection = () => {
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 opacity-0 animate-fade-in-up-4">
             <Button asChild variant="heroLight" size="hero" className="transition-all duration-200">
               <Link href="#projects" className="group/button">
-                <span className="mr-2">Explore my work below</span>
+                <span className="mr-2">View my work</span>
                 <ArrowDown className="size-4 transition-transform group-hover/button:translate-y-0.5" />
               </Link>
             </Button>
