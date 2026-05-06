@@ -76,7 +76,7 @@ export const TestimonialsSection = () => {
 
               {/* Quote - Primary element, flex-grow to push identity down */}
               <div className="relative z-10 flex-1">
-                <p className="text-base text-white/80 leading-relaxed">
+                <p className="text-base text-white/65 leading-relaxed">
                   {testimonial.text}
                 </p>
               </div>
