@@ -1,13 +1,16 @@
 
+"use client";
+
 import Image from "next/image";
 import MemojiImage from "@assets/images/memoji-computer.png";
 import GrainImage from "@assets/images/grain.jpg";
-import StarIcon from "@assets/icons/star.svg";
-import SparkleIcon from "@assets/icons/sparkle.svg";
 import ArrowDown from "@assets/icons/arrow-down.svg";
-import { HeroOrbit } from "@/components/HeroOrbit";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { heroContainerVariants, heroLetterVariants, sectionItemVariants } from "@/components/animation-presets";
+
+const heroTitle = "Full-Stack Developer & Mobile Engineer";
 
 
 export const HeroSection = () => {
@@ -55,14 +58,21 @@ export const HeroSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="flex flex-col items-center">
-          <Image
+        <motion.div
+          className="flex flex-col items-center"
+          initial="hidden"
+          animate="visible"
+          variants={heroContainerVariants}
+        >
+          <motion.div variants={sectionItemVariants}>
+            <Image
             src={MemojiImage}
-            className="size-[100px] opacity-0 animate-fade-in-up"
-            alt="a man sitting behind a laptop"
-          />
+              className="size-[100px]"
+              alt="a man sitting behind a laptop"
+            />
+          </motion.div>
 
-          <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg opacity-0 animate-fade-in-up-1">
+          <motion.div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg" variants={sectionItemVariants}>
             <div className="relative flex items-center justify-center">
               <div className="size-2.5 rounded-full bg-green-500"></div>
               <div className="absolute size-2.5 bg-green-500 rounded-full animate-ping-large"></div>
@@ -71,18 +81,31 @@ export const HeroSection = () => {
             <div className="text-sm font-medium">
               Available now for new projects
             </div>
-          </div>
+          </motion.div>
           <div className="max-w-lg mx-auto lg:max-w-3xl">
-            <h1 className="font-serif font-extrabold text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-tight opacity-0 animate-fade-in-up-2">
-              Full-Stack Developer & Mobile Engineer
-            </h1>
-            <p className="mt-4 text-center text-white/60 md:text-base lg:text-lg opacity-0 animate-fade-in-up-3">
-              I build modern web and mobile applications with React, Next.js,
-              React Native, and Python/Django. Let&apos;s bring your ideas to life.
-            </p>
+            <motion.h1
+              className="font-serif font-extrabold text-3xl md:text-5xl lg:text-7xl text-center mt-8 tracking-tight"
+              variants={sectionItemVariants}
+            >
+              <span className="sr-only">{heroTitle}</span>
+              <span aria-hidden className="inline-flex flex-wrap justify-center">
+                {Array.from(heroTitle).map((character, index) => (
+                  <motion.span
+                    key={`${character}-${index}`}
+                    variants={heroLetterVariants}
+                    className="inline-block whitespace-pre"
+                  >
+                    {character === " " ? "\u00A0" : character}
+                  </motion.span>
+                ))}
+              </span>
+            </motion.h1>
+            <motion.p className="mt-4 text-center text-white/60 md:text-base lg:text-lg" variants={sectionItemVariants}>
+             Developer focused on performance, user experience, and scalable digital systems.
+            </motion.p>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 opacity-0 animate-fade-in-up-4">
+          <motion.div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4" variants={sectionItemVariants}>
             <Button asChild variant="heroLight" size="hero" className="transition-all duration-200">
               <Link href="#projects" className="group/button">
                 <span className="mr-2">View my work</span>
@@ -95,8 +118,8 @@ export const HeroSection = () => {
                 Check out resume
               </Link>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

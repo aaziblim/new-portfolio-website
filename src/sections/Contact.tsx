@@ -1,7 +1,13 @@
+"use client";
+
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
 import { Card } from "@/components/Card";
 import { HeaderSection } from "@/components/HeaderSection";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { sectionCardVariants, viewportReveal } from "@/components/animation-presets";
+
+const MotionCard = motion(Card);
 
 export const ContactSection = () => {
   return (
@@ -13,8 +19,7 @@ export const ContactSection = () => {
           description="Have a project in mind? I&apos;d love to hear about it."
         />
 
-        <div className="mt-12 lg:mt-16">
-          <Card className="p-8 md:p-12 lg:p-16">
+        <MotionCard className="mt-12 lg:mt-16 p-8 md:p-12 lg:p-16" initial="hidden" whileInView="visible" viewport={viewportReveal} variants={sectionCardVariants}>
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center text-center md:text-left">
               <div className="flex-1">
                 <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl">
@@ -42,8 +47,7 @@ export const ContactSection = () => {
                 </Button>
               </div>
             </div>
-          </Card>
-        </div>
+        </MotionCard>
       </div>
     </section>
   );

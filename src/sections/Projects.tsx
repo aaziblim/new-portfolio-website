@@ -1,3 +1,5 @@
+"use client";
+
 import spherespaceImage from "@/assets/images/spacephere homepage.png";
 import aceItImage from "@/assets/images/ace-it homepage.png";
 import eventManagementImage from "@/assets/images/event management.png";
@@ -9,6 +11,10 @@ import GrainImage from "@assets/images/grain.jpg";
 import { HeaderSection } from "@/components/HeaderSection";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { sectionCardVariants, viewportReveal } from "@/components/animation-presets";
+
+const MotionCard = motion(Card);
 
 const portfolioProjects = [
   {
@@ -75,19 +81,22 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="pb-16 lg:py-24">
       <div className="container">
-        <div className="opacity-0 animate-fade-in-up">
-          <HeaderSection
-            title="Real-world Results"
-            eyebrow="Featured Projects"
-            description="See how I transformed concepts into engaging digital experiences."
-          />
-        </div>
+        <HeaderSection
+          title="Real-world Results"
+          eyebrow="Featured Projects"
+          description="See how I transformed concepts into engaging digital experiences."
+        />
 
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => (
-            <Card
+          {portfolioProjects.map((project, index) => (
+            <MotionCard
               key={project.title}
-              className="group px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 opacity-0 animate-fade-in-up-2 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 transition-all duration-[180ms] ease-out"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportReveal}
+              variants={sectionCardVariants}
+              transition={{ delay: index * 0.08 }}
+              className="group px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 transition-all duration-[180ms] ease-out"
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
@@ -168,7 +177,7 @@ export const ProjectsSection = () => {
                   </div>
                 </div>
               </div>
-            </Card>
+            </MotionCard>
           ))}
         </div>
       </div>

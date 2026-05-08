@@ -1,3 +1,5 @@
+"use client";
+
 import memojiAvatar1 from "@assets/images/memoji-avatar-1.png";
 import memojiAvatar2 from "@assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@assets/images/memoji-avatar-3.png";
@@ -5,6 +7,10 @@ import memojiAvatar4 from "@assets/images/memoji-avatar-4.png";
 import { HeaderSection } from "@/components/HeaderSection";
 import Image from "next/image";
 import { Card } from "@/components/Card";
+import { motion } from "framer-motion";
+import { sectionCardVariants, viewportReveal } from "@/components/animation-presets";
+
+const MotionCard = motion(Card);
 
 const testimonials = [
   {
@@ -53,9 +59,14 @@ export const TestimonialsSection = () => {
 
         {/* Testimonial Cards Grid */}
         <div className="mt-12 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {testimonials.map((testimonial) => (
-            <Card
+          {testimonials.map((testimonial, index) => (
+            <MotionCard
               key={testimonial.name}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportReveal}
+              variants={sectionCardVariants}
+              transition={{ delay: index * 0.08 }}
               className="group relative bg-gray-800 p-6 md:p-8 flex flex-col min-h-[280px] border border-white/10 hover:border-white/15 transition-colors duration-300 ease-out"
             >
               <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_40%)]" />
@@ -100,7 +111,7 @@ export const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
-            </Card>
+            </MotionCard>
           ))}
         </div>
       </div>

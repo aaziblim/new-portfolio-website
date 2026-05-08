@@ -1,13 +1,12 @@
 import GrainImage from "@assets/images/grain.jpg";
-import { PropsWithChildren } from "react";
+import { forwardRef, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
-export const Card = ({
-  className,
-  children,
-}: PropsWithChildren<{ className?: string }>) => {
+export const Card = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string }>>(
+  ({ className, children }, ref) => {
   return (
     <div
+      ref={ref}
       className={twMerge(
         "bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none",
         className
@@ -20,4 +19,6 @@ export const Card = ({
       {children}
     </div>
   );
-};
+});
+
+Card.displayName = "Card";
