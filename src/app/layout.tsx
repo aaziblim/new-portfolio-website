@@ -3,6 +3,7 @@ import { Inter, Calistoga, Manrope, Geist } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { cn } from "@assets/lib/utils";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const calistoga = Calistoga({
@@ -155,6 +156,7 @@ export default function RootLayout({
           manrope.variable
         )}
       >
+        <CursorGlow />
         {children}
       </body>
     </html>
